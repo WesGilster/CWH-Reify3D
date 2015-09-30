@@ -1,0 +1,24 @@
+.cwh-text-indent {margin-left:5px; }
+.cwh-text-indent-huge {margin-left:50px; }
+.cwh-dark-velvet-button {
+	margin-bottom:10px;
+	outline: none; 
+	opacity: 1; 
+	width: 100%;
+	text-transform: none;
+	font-family:'Cabin', sans-serif;
+}
+.cwh-dark-velvet-title {
+	text-align: center;
+	color: #888888;
+	text-transform: none;
+	font-family:'Cabin', sans-serif;
+	vertical-align:middle;
+	display: block;
+}
+.cwh-vcenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
