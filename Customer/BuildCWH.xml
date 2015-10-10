@@ -8,18 +8,18 @@
 		
 		<replace file="../../Creation-Workshop-Host/host/bin/debug.sh" token="area515/Creation-Workshop-Host" value="WesGilster/CWH-Reify3D"/>
 		<replace file="../../Creation-Workshop-Host/host/bin/downgrade.sh" token="area515/Creation-Workshop-Host" value="WesGilster/CWH-Reify3D"/>
-		<replace file="../../Creation-Workshop-Host/host/bin/createPrinters.sh" token="area515/Creation-Workshop-Host" value="WesGilster/CWH-Reify3D"/>
 		<replace file="../../Creation-Workshop-Host/host/bin/start.sh" token="area515/Creation-Workshop-Host" value="WesGilster/CWH-Reify3D"/>
 		<replace file="../../Creation-Workshop-Host/host/bin/testKit.sh" token="area515/Creation-Workshop-Host" value="WesGilster/CWH-Reify3D"/>
 		
 		<zip destfile="${deployedServerZipFile}">
 			<zipfileset dir="." includes="**/build.number"/>
+			<zipfileset dir="resources" prefix="resources" includes="**/*"/>
+			<zipfileset dir="install" includes="**/*"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/srcbin" includes="**/*.class"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/srcbin" includes="**/*.png"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/srcbin" includes="**/*.properties"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/os" prefix="os" includes="**/*"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/bin" includes="**/*"/>
-			<zipfileset dir="resources" prefix="resources" includes="**/*"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/libs/freemarker" prefix="lib" includes="**/*"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/libs/commons-cli" prefix="lib" includes="**/*"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/libs/commons-codec" prefix="lib" includes="**/*"/>
@@ -36,6 +36,7 @@
 		</zip>
 		<zip destfile="${deployedTestZipFile}">
 			<zipfileset dir="." includes="**/build.number"/>
+			<zipfileset dir="install" includes="**/*"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/srcbin" includes="**/*.class"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/srcbin" includes="**/*.png"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/srcbin" includes="**/*.properties"/>
@@ -70,7 +71,6 @@
 		
 		<replace file="../../Creation-Workshop-Host/host/bin/debug.sh" token="WesGilster/CWH-Reify3D" value="area515/Creation-Workshop-Host"/>
 		<replace file="../../Creation-Workshop-Host/host/bin/downgrade.sh" token="WesGilster/CWH-Reify3D" value="area515/Creation-Workshop-Host"/>
-		<replace file="../../Creation-Workshop-Host/host/bin/createPrinters.sh" token="WesGilster/CWH-Reify3D" value="area515/Creation-Workshop-Host"/>
 		<replace file="../../Creation-Workshop-Host/host/bin/start.sh" token="WesGilster/CWH-Reify3D" value="area515/Creation-Workshop-Host"/>
 		<replace file="../../Creation-Workshop-Host/host/bin/testKit.sh" token="WesGilster/CWH-Reify3D" value="area515/Creation-Workshop-Host"/>
 		
