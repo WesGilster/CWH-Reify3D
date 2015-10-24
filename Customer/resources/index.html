@@ -53,7 +53,7 @@
 
   	<title>Solus Reify 3D</title>
   	
-	<!-- Load the required CSS libraries -->
+	<!-- CSS for 3rd party libraries go here -->
 		<link href="./bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
 		<link href="./bootcards/css/bootcards-desktop.min.css" media="screen" rel="stylesheet" type="text/css">
 		<link href="./fontawesome/css/font-awesome.min.css" media="screen" rel="stylesheet">
@@ -62,7 +62,9 @@
 	<!-- CSS for your skin goes here -->
 		<link href="./dark-velvet/css/jquery-ui-1.8.20.custom.css" media="screen" rel="stylesheet">
 		<link href="./dark-velvet/style.css" media="screen" rel="stylesheet">
-		
+		<link href="./cwh/css/cwh.css" rel="stylesheet">
+		<link href="./dark-velvet/css/custom-listbox-bootstrap.css" rel="stylesheet">
+				
 	<script>var isDesktop = true;</script>
 	
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -71,22 +73,23 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
       <![endif]-->
 
-    <script src="./jquery/jquery.min.js"></script>
-	<script src="./bootstrap/js/bootstrap.min.js"></script>
-	<script src="./jquery/jquery-ui.min.js"></script>
-	<script src="./bootcards/js/bootcards.min.js"></script>
-	<script src="./angular/js/angular.min.js"></script> 
-	<script src="./angular/js/angular-route.min.js"></script> 
+	<!-- Javascript for 3rd party libraries go here -->
+	    <script src="./jquery/jquery.min.js"></script>
+		<script src="./bootstrap/js/bootstrap.min.js"></script>
+		<script src="./bootcards/js/bootcards.min.js"></script>
+		<script src="./angular/js/angular.min.js"></script> 
+		<script src="./angular/js/angular-route.min.js"></script> 
+		<script src="./angularModal/angular-modal-service.js"></script>
 	
-	<script src="./cwh/js/index.js"></script> 
-	<script src="./cwh/js/main.js"></script> 
-	<script src="./cwh/js/dashboard.js"></script> 
-	<script src="./cwh/js/printers.js"></script> 
-	<script src="./cwh/js/printerControls.js"></script> 
+	<!--  Java Script for your app go here -->
+		<script src="./cwh/js/index.js"></script> 
+		<script src="./cwh/js/main.js"></script> 
+		<script src="./cwh/js/printWizard.js"></script> 
 	
-	<!-- Java Script Libraries for your skin go here -->
-  	<script src="./dark-velvet/js/libs/jquery-ui.min.js"></script>
-  	<script src="./dark-velvet/js/progressbar.js"></script>
+	<!-- Java Script for your skin go here -->
+	  	<script src="./dark-velvet/js/libs/jquery-ui.min.js"></script>
+	  	<script src="./dark-velvet/js/progressbar.js"></script>
+		<script src="./dark-velvet/js/listgroup.js"></script>
 	
 </head>
 <body id="bootcards" ng-controller="IndexController as index">
@@ -152,115 +155,4 @@
 	    </div>
 	  </div>
 	</div>
-
-
-
-<div ng-controller="ModalDemoCtrl">
-    <script type="text/ng-template" id="myModalContent.html">
-        <div class="modal-header">
-            <h3 class="modal-title">Im a modal!</h3>
-        </div>
-        <div class="modal-body">
-            <ul>
-                <li ng-repeat="item in items">
-                    <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
-                </li>
-            </ul>
-            Selected: <b>{{ selected.item }}</b>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-        </div>
-    </script>
-
-    <button type="button" class="btn btn-default" ng-click="open()">Open me!</button>
-    <button type="button" class="btn btn-default" ng-click="open('lg')">Large modal</button>
-    <button type="button" class="btn btn-default" ng-click="open('sm')">Small modal</button>
-    <button type="button" class="btn btn-default" ng-click="toggleAnimation()">Toggle Animation ({{ animationsEnabled }})</button>
-    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
-</div>
-
-
-
-	<div
-        bn-modals
-        ng-show="subview"
-        class="m-modals"
-        ng-switch="subview">
-
-        <!-- BEGIN: Alert Modal. -->
-        <div
-            ng-switch-when="alert"
-            ng-controller="AlertModalController"
-            class="modal">
-
-            <p>
-                {{ message }}
-            </p>
-
-            <p>
-                <a ng-click="close()">Ok, I got it!</a>
-            </p>
-
-            <!-- This is to demonstrate that we can jump from one modal to another. -->
-            <p>
-                <a ng-click="jumpToConfirm()" class="jump">Jump over to the confirm modal</a>
-            </p>
-
-        </div>
-        <!-- END: Alert Modal. -->
-
-
-        <!-- BEGIN: Confirm Modal. -->
-        <div
-            ng-switch-when="confirm"
-            ng-controller="ConfirmModalController"
-            class="modal">
-
-            <p>
-                {{ message }}
-            </p>
-
-            <p>
-                <a ng-click="confirm()">{{ confirmButton }}</a>
-                &mdash;
-                <a ng-click="deny()">{{ denyButton }}</a>
-            </p>
-
-        </div>
-        <!-- END: Confirm Modal. -->
-
-
-        <!-- BEGIN: Prompt Modal. -->
-        <form
-            ng-switch-when="prompt"
-            ng-controller="PromptModalController"
-            ng-submit="submit()"
-            class="modal">
-
-            <p>
-                {{ message }}
-            </p>
-
-            <p ng-if="errorMessage">
-                <strong>Sorry:</strong> {{ errorMessage }}
-            </p>
-
-            <p>
-                <input type="text" ng-model="form.input" />
-            </p>
-
-            <p>
-                <a ng-click="submit()">Submit</a>
-                &mdash;
-                <a ng-click="cancel()">Cancel</a>
-            </p>
-
-        </form>
-        <!-- END: Prompt Modal. -->
-
-    </div>
-    <!-- END: Modals Layout. -->
-
 </body></html>

@@ -11,15 +11,9 @@
 		<replace file="../../Creation-Workshop-Host/host/bin/start.sh" token="area515/Creation-Workshop-Host" value="WesGilster/CWH-Reify3D"/>
 		<replace file="../../Creation-Workshop-Host/host/bin/testKit.sh" token="area515/Creation-Workshop-Host" value="WesGilster/CWH-Reify3D"/>
 		
-		<copy file="../../Creation-Workshop-Host/host/bin/debug.sh" tofile="bin/debug.sh"/>
-		<copy file="../../Creation-Workshop-Host/host/bin/downgrade.sh" tofile="bin/downgrade.sh"/>
-		<copy file="../../Creation-Workshop-Host/host/bin/start.sh" tofile="bin/start.sh"/>
-		<copy file="../../Creation-Workshop-Host/host/bin/testKit.sh" tofile="bin/testKit.sh"/>
-		
 		<zip destfile="${deployedServerZipFile}">
 			<zipfileset dir="." includes="**/build.number"/>
 			<zipfileset dir="resources" prefix="resources" includes="**/*"/>
-			<zipfileset dir="install" includes="**/*"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/srcbin" includes="**/*.class"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/srcbin" includes="**/*.png"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/srcbin" includes="**/*.properties"/>
@@ -41,7 +35,6 @@
 		</zip>
 		<zip destfile="${deployedTestZipFile}">
 			<zipfileset dir="." includes="**/build.number"/>
-			<zipfileset dir="install" includes="**/*"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/srcbin" includes="**/*.class"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/srcbin" includes="**/*.png"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/srcbin" includes="**/*.properties"/>
@@ -62,7 +55,7 @@
 			<zipfileset dir="../../Creation-Workshop-Host/host/libs/jssc" prefix="lib" includes="**/*"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/libs/cling" prefix="lib" includes="**/*"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/libs/mp4parser" prefix="lib" includes="**/*"/>
-			<zipfileset dir="../../Creation-Workshop-Host/host/libs/junit" prefix="lib" includes="**/*"/>
+			<zipfileset dir="../../Creation-Workshop-Host/host/libs/testing" prefix="lib" includes="**/*"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/libs/guava" prefix="lib" includes="**/*"/>
 		</zip>
 		<zip destfile="${deployedClientZipFile}">

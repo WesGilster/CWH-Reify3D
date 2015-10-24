@@ -1,16 +1,20 @@
 (function() {
 	var cwhApp = angular.module('cwhApp');
 
-	cwhApp.controller("Main", function ($scope, $http) {
-        $http.get('/services/files/list').success(function(data) {
-        	$scope.printables = data;
-        });
-        $http.get('/services/printers/list').success(function(data) {
-        	$scope.printers = data;
-        });
-        $http.get('/services/settings/visibleCards').success(function(data) {
-        	$scope.visibleCards = data;
-        });
-	})
-
+	cwhApp.controller("Main", ['$scope', '$http', 'ModalService', function($scope, $http, ModalService) {	
+		$scope.showPrintWizard = function showPrintWizard() {
+		    ModalService.showModal({
+		      templateUrl: "/printWizard.html",
+		      controller: "printWizard",
+		      inputs: {
+		        title: "Print Wizard"
+		      }
+		    }).then(function(modal) {
+		      modal.element.modal();
+		      modal.close.then(function(result) {
+		    	//TODO: after event logic for main screen result is from close operation!
+		      });
+		    });
+		};
+	}])
 })();

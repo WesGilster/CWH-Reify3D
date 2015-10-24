@@ -1,0 +1,115 @@
+#Bootstrap offline installation of CWH test kit from development
+#Manually download or sudo wget https://github.com/WesGilster/Creation-Workshop-Host/raw/master/host/cwhTestKit-0.149.zip
+sudo wget https://github.com/WesGilster/Creation-Workshop-Host/raw/master/host/bin/start.sh
+sudo chmod 777 *.sh
+sudo ./start.sh localInstall TestKit
+
+#Bootstrap offline installation of CWH from development
+#Manually download or sudo wget https://github.com/WesGilster/Creation-Workshop-Host/raw/master/host/cwh-0.149.zip
+sudo wget https://github.com/WesGilster/Creation-Workshop-Host/raw/master/host/bin/start.sh
+sudo chmod 777 *.sh
+sudo ./start.sh localInstall
+
+#Bootstrap testkit from development
+sudo wget https://github.com/area515/Creation-Workshop-Host/raw/master/host/bin/testKitDev.sh
+sudo wget https://github.com/area515/Creation-Workshop-Host/raw/master/host/bin/start.sh
+sudo chmod 777 *.sh
+sudo ./testKitDev.sh
+
+#Bootstrap CWH from development
+sudo wget https://github.com/WesGilster/Creation-Workshop-Host/raw/master/host/bin/start.sh
+sudo chmod 777 *.sh
+sudo ./start.sh
+
+sudo bash
+sed -i s/performedOneTimeInstall=true/performedOneTimeInstall=false/ ~/3dPrinters/config.properties
+rm -r /opt/cwh
+rm start.sh
+exit
+
+copy zip file
+sudo wget https://github.com/area515/Creation-Workshop-Host/raw/master/host/bin/start.sh
+sudo chmod 777 *.sh
+sudo ./start.sh
+
+Captive Portal?
+
+/sbin/wpa_supplicant -dd -s -B -P /var/run/wpa_supplicant.wlan0.pid -i wlan0 -W -D nl80211,wext -c /etc/wpa_supplicant/wpa_supplicant.conf
+/sbin/wpa_cli -P /var/run/wpa_action.wlan0.pid -i wlan0 -p /var/run/wpa_supplicant -a /sbin/wpa_action
+
+network={
+        ssid="CFSNetwork"
+        key_mgmt=NONE
+        auth_alg=OPEN
+        wep_key0=acaf81169d
+        id_str="StaticWEPnoauthentication"
+}
+network={
+        ssid="CFSNetwork"
+        key_mgmt=NONE
+        auth_alg=OPEN
+        wep_key0=acaf81169d
+}
+
+network={
+        ssid="Plaintext"
+        key_mgmt=NONE
+        auth_alg=OPEN
+        id_str="OpenNoAuthentication"
+}
+
+network={
+        ssid="StaticWEP"
+        key_mgmt=NONE
+        auth_alg=SHARED
+        wep_key0="test"
+        id_str="SharedKeyAuthentication"
+}
+
+network={
+        ssid="WPAPersonal"
+        psk="wesleygilster"
+        proto=WPA
+        key_mgmt=WPA-PSK
+        pairwise=TKIP
+        auth_alg=OPEN
+        id_str="WPATKIPPSK"
+}
+
+network={
+        ssid="WPAPersonalCCMP"
+        psk="wesgilster"
+        proto=WPA
+        key_mgmt=WPA-PSK
+        pairwise=CCMP
+        auth_alg=OPEN
+        id_str="WPAPSKCCMP"
+}
+
+network={
+        ssid="WPA2PersonalTKIP"
+        psk="WesGilster"
+        proto=RSN
+        key_mgmt=WPA-PSK
+        pairwise=TKIP
+        auth_alg=OPEN
+}
+
+network={
+        ssid="WPA2PersonalCCMP"
+        psk="WesGilster"
+        proto=RSN
+        key_mgmt=WPA-PSK
+        pairwise=CCMP
+        auth_alg=OPEN
+}
+
+
+/usr/sbin/ifplugd -i wlan0 -q -f -u0 -d10 -w -I
+dhclient -v -pf /run/dhclient.wlan0.pid -lf /var/lib/dhcp/dhclient.wlan0.leases wlan0
+another dhclient
+sudo ifdown wlan0
+sudo ifup wlan0
+
+execute dhcpcd
+cli

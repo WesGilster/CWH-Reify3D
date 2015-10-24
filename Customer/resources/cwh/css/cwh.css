@@ -22,3 +22,29 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.cwhDocumentList{
+    overflow-x:hidden;
+    overflow-y:scroll;
+    height:200px;
+    width:100%;
+    padding: 0 15px;
+    scrollbar-base-color: black;
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255,0,0,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+.wizardListItem{
+	margin-left: 0px;
+	margin-right: 0px;
+}
