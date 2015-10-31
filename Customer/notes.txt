@@ -1,11 +1,17 @@
 #Bootstrap offline installation of CWH test kit from development
-#Manually download or sudo wget https://github.com/WesGilster/Creation-Workshop-Host/raw/master/host/cwhTestKit-0.149.zip
+#Manually download https://github.com/WesGilster/Creation-Workshop-Host/raw/master/host/cwhTestKit-0.149.zip
 sudo wget https://github.com/WesGilster/Creation-Workshop-Host/raw/master/host/bin/start.sh
 sudo chmod 777 *.sh
 sudo ./start.sh localInstall TestKit
 
 #Bootstrap offline installation of CWH from development
-#Manually download or sudo wget https://github.com/WesGilster/Creation-Workshop-Host/raw/master/host/cwh-0.149.zip
+#Manually download https://github.com/WesGilster/Creation-Workshop-Host/raw/master/host/cwh-0.149.zip
+sudo wget https://github.com/WesGilster/Creation-Workshop-Host/raw/master/host/bin/start.sh
+sudo chmod 777 *.sh
+sudo ./start.sh localInstall
+
+#Bootstrap offline installation of CWH for Reify 3d
+#Manually download https://github.com/WesGilster/CWH-Reify3D/raw/master/Customer/cwh-0.147.zip 
 sudo wget https://github.com/WesGilster/Creation-Workshop-Host/raw/master/host/bin/start.sh
 sudo chmod 777 *.sh
 sudo ./start.sh localInstall
@@ -41,14 +47,14 @@ network={
         ssid="CFSNetwork"
         key_mgmt=NONE
         auth_alg=OPEN
-        wep_key0=acaf81169d
+        wep_key0=1234567890abcdef
         id_str="StaticWEPnoauthentication"
 }
 network={
         ssid="CFSNetwork"
         key_mgmt=NONE
         auth_alg=OPEN
-        wep_key0=acaf81169d
+        wep_key0=1234567890abcdef
 }
 
 network={

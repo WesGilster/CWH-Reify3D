@@ -1,0 +1,77 @@
+%%Excelsior JET v11.0 project file
+
+-compilewithfixedheap-
+-genstackalloc+
+-genstacktrace-
+-global-
+-gui+
+-ignoreclassduplication+
+-ignorememberabsence+
+-inline+
+-jetcpenablemanualsettings+
+-multiapp-
+-splashgetfrommanifest-
+
+-apptype=Plain
+-classabsence=HANDLE
+-compilerheap=1744830464
+-inlinelimit=100
+-inlinetolimit=1000
+-jetcplastpage:=PageCompile
+-jetrt=Desktop
+-jetvmprop=-Djet.gc.heaplimit:0 -Djet.stack.trace
+-main=org/area515/resinprinter/client/Main
+-outputdir=.
+-outputname=View3DPrinter
+-saprofmode=JETCPONLY
+-saproftimeout=20
+-splash=../../resources/images/reify-splash-320x460.png
+-stacklimit=900000
+-startupprofile=./View3DPrinter.startup
+
+
+
+
+!classpathentry ../../../../Creation-Workshop-Host/host/srcbin
+  -pack=none
+  -protect=all
+  -optimize=all
+!end
+!classpathentry ../../../../Creation-Workshop-Host/host/libs/cling/cling-core-2.0-alpha3.jar
+  -pack=noncompiled
+  -protect=nomatter
+  -optimize=all
+!end
+!classpathentry ../../../../Creation-Workshop-Host/host/libs/cling/cling-support-2.0-alpha3.jar
+  -pack=noncompiled
+  -protect=nomatter
+  -optimize=all
+!end
+!classpathentry ../../../../Creation-Workshop-Host/host/libs/cling/httpclient-4.3.3.jar
+  -pack=noncompiled
+  -protect=nomatter
+  -optimize=all
+!end
+!classpathentry ../../../../Creation-Workshop-Host/host/libs/cling/httpcore-4.3.2.jar
+  -pack=noncompiled
+  -protect=nomatter
+  -optimize=all
+!end
+!classpathentry ../../../../Creation-Workshop-Host/host/libs/cling/seamless-http-1.0-alpha3.jar
+  -pack=noncompiled
+  -protect=nomatter
+  -optimize=all
+!end
+!classpathentry ../../../../Creation-Workshop-Host/host/libs/cling/seamless-util-1.0-alpha3.jar
+  -pack=noncompiled
+  -protect=nomatter
+  -optimize=all
+!end
+!classpathentry ../../../../Creation-Workshop-Host/host/libs/cling/seamless-xml-1.0-alpha3.jar
+  -pack=noncompiled
+  -protect=nomatter
+  -optimize=all
+!end
+
+!module ../../resources/images/printer64x64.ico
+

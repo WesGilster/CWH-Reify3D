@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./nicInstall.sh
+cp -f config.properties.firstInstall ~/3dPrinters/config.properties

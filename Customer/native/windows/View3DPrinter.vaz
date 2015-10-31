@@ -1,0 +1,8 @@
+LONGLONGTIME: org/seamless/xhtml/XHTML$ELEMENT.<clinit>()V
+LONGLONGTIME: org/seamless/util/i18n/Country.<clinit>()V
+LONGLONGTIME: org/fourthline/cling/support/model/dlna/message/header/DLNAHeader$Type.<clinit>()V
+LONGLONGTIME: org/fourthline/cling/support/model/dlna/DLNAProfiles.<clinit>()V
+LONGLONGTIME: org/fourthline/cling/model/types/Datatype$Builtin.<clinit>()V
+LONGLONGTIME: org/fourthline/cling/model/message/header/UpnpHeader$Type.<clinit>()V
+LONGLONGTIME: org/fourthline/cling/binding/xml/UDA10DeviceDescriptorBinderSAXImpl$1.<clinit>()V
+LONGLONGTIME: org/fourthline/cling/binding/xml/Descriptor$Device$ELEMENT.<clinit>()V

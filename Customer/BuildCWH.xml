@@ -14,6 +14,7 @@
 		<zip destfile="${deployedServerZipFile}">
 			<zipfileset dir="." includes="**/build.number"/>
 			<zipfileset dir="resources" prefix="resources" includes="**/*"/>
+			<zipfileset dir="install" includes="**/*"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/srcbin" includes="**/*.class"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/srcbin" includes="**/*.png"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/srcbin" includes="**/*.properties"/>
@@ -35,6 +36,7 @@
 		</zip>
 		<zip destfile="${deployedTestZipFile}">
 			<zipfileset dir="." includes="**/build.number"/>
+			<zipfileset dir="install" includes="**/*"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/srcbin" includes="**/*.class"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/srcbin" includes="**/*.png"/>
 			<zipfileset dir="../../Creation-Workshop-Host/host/srcbin" includes="**/*.properties"/>
